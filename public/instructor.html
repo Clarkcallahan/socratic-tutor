@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Instructor · Reading Conversations</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap wide">
+  <nav class="top hidden" id="nav" aria-label="Instructor">
+    <a href="#/"><strong>Reading Conversations</strong> · Instructor</a>
+    <span class="row flush">
+      <a class="small" href="/api/instructor/export-all.json">Export all data</a>
+      <button type="button" class="link small" id="logout">Sign out</button>
+    </span>
+  </nav>
+  <div class="notice warning hidden no-print" id="mock-banner">Mock mode is on: tutor replies and reports are placeholders, not real AI output. Set AI_PROVIDER=anthropic and add an API key for real use.</div>
+  <p class="error no-print" id="error" role="alert"></p>
+  <p class="small muted no-print" id="status" role="status"></p>
+  <main id="app"></main>
+</div>
+<script src="/instructor.js" type="module"></script>
+</body>
+</html>

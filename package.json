@@ -1,0 +1,16 @@
+{
+  "name": "reading-tutor",
+  "version": "0.1.0",
+  "description": "Socratic reading conversations for college courses, with instructor reports.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "unpdf": "^1.0.0"
+  }
+}

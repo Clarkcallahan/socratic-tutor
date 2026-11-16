@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Reading Conversation</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <p class="eyebrow" id="course"></p>
+    <h1 id="title">Loading…</h1>
+    <p class="muted" id="assignment"></p>
+  </header>
+
+  <p class="error" id="page-error" role="alert"></p>
+
+  <!-- Step 1: notice and name -->
+  <section id="intro" class="hidden" aria-labelledby="intro-h">
+    <h2 id="intro-h">Before you begin</h2>
+    <p>After you have done the reading, you will talk it through with an AI tutor. This takes the place of a reading quiz. There are no trick questions. The goal is to explain what you understood in your own words, and it is fine to say what confused you.</p>
+    <p id="source" class="hidden"></p>
+    <div class="notice">
+      <strong>What you should know</strong>
+      <ul>
+        <li>The tutor is an AI, set up by your instructor to reflect their teaching style. It is not your instructor, and it can make mistakes.</li>
+        <li>This conversation is recorded. Your instructor will review it, along with an AI-drafted summary of what you explained.</li>
+        <li>What is collected: your name, the messages you write, the tutor's replies, and the times they were sent. Nothing else.</li>
+        <li>Your messages are sent to an AI service (Anthropic) to produce the tutor's replies. Your name is not sent to it. Please do not include private personal information in your messages.</li>
+        <li>Only you (on this device) and your instructor can see this conversation. This page uses no advertising, analytics, or tracking.</li>
+      </ul>
+    </div>
+    <form id="start-form">
+      <label for="name">Your name <span class="hint">As it appears on the class roll, so your instructor can match it to you.</span></label>
+      <input type="text" id="name" autocomplete="name" maxlength="100" required>
+      <label class="check"><input type="checkbox" id="consent" required> <span>I have read the notice above and understand that this conversation is recorded for my instructor.</span></label>
+      <p class="error" id="start-error" role="alert"></p>
+      <button type="submit">Begin conversation</button>
+    </form>
+  </section>
+
+  <!-- Step 2: conversation -->
+  <section id="conversation" class="hidden" aria-labelledby="conv-h">
+    <h2 id="conv-h" class="sr-only">Conversation</h2>
+    <p class="small muted no-print">AI tutor · recorded for your instructor · signed in as <span id="who"></span></p>
+    <ol class="chat" id="chat" role="log" aria-live="polite" aria-label="Conversation with the tutor"></ol>
+
+    <form class="composer" id="composer">
+      <label for="text" id="text-label">Your response</label>
+      <textarea id="text" rows="3" maxlength="4000" aria-describedby="composer-hint"></textarea>
+      <p class="small muted" id="composer-hint">Press Enter to send, Shift+Enter for a new line.</p>
+      <p class="error" id="send-error" role="alert"></p>
+      <div class="row">
+        <button type="submit" id="send">Send</button>
+        <button type="button" class="secondary" id="finish">Finish conversation</button>
+        <span class="small muted" id="finish-hint"></span>
+      </div>
+    </form>
+
+    <div id="done" class="hidden no-print">
+      <div class="notice"><strong>You are finished.</strong> Your conversation has been saved for your instructor.</div>
+      <div class="row">
+        <button type="button" class="secondary" id="print">Print or save a copy</button>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="/student.js" type="module"></script>
+</body>
+</html>
